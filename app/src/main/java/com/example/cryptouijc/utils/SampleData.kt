@@ -405,5 +405,81 @@ object SampleData {
         )
     )
 
+    val transactionHistory = listOf(
+        Transaction(
+            transactionID = 1,
+            description = "Sold Ethereum",
+            amount = -2.0034F,
+            currencyCode = "ETH",
+            transactionType = "S",
+            transactionDate = "14:20 12 Apr"
+        ),
+        Transaction(
+            transactionID = 2,
+            description = "Bought Ethereum",
+            amount = 2.0034F,
+            currencyCode = "ETH",
+            transactionType = "B",
+            transactionDate = "14:20 12 Apr"
+        ),
+        Transaction(
+            transactionID = 3,
+            description = "Sold Ethereum",
+            amount = -2.0034F,
+            currencyCode = "ETH",
+            transactionType = "S",
+            transactionDate = "14:20 12 Apr"
+        ),
+        Transaction(
+            transactionID = 4,
+            description = "Bought Ethereum",
+            amount = 2.0034F,
+            currencyCode = "ETH",
+            transactionType = "B",
+            transactionDate = "14:20 12 Apr"
+        ),
+        Transaction(
+            transactionID = 5,
+            description = "Bought Ethereum",
+            amount = 2.0034F,
+            currencyCode = "ETH",
+            transactionType = "B",
+            transactionDate = "14:20 12 Apr"
+        ),
+        Transaction(
+            transactionID = 6,
+            description = "Bought Ethereum",
+            amount = 2.0034F,
+            currencyCode = "ETH",
+            transactionType = "B",
+            transactionDate = "14:20 12 Apr"
+        ),
+        Transaction(
+            transactionID = 7,
+            description = "Bought Ethereum",
+            amount = 2.0034F,
+            currencyCode = "ETH",
+            transactionType = "B",
+            transactionDate = "14:20 12 Apr"
+        ),
+        Transaction(
+            transactionID = 8,
+            description = "Bought Ethereum",
+            amount = 2.0034F,
+            currencyCode = "ETH",
+            transactionType = "B",
+            transactionDate = "14:20 12 Apr"
+        ),
+        Transaction(
+            transactionID = 9,
+            description = "Bought Ethereum",
+            amount = 2.0034F,
+            currencyCode = "ETH",
+            transactionType = "B",
+            transactionDate = "14:20 12 Apr"
+        ),
+    )
+
+
 
 }
