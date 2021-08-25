@@ -288,7 +288,7 @@ private fun CurrencyCard(
 }
 
 @Composable
-private fun SetPriceAlertSection() {
+fun SetPriceAlertSection() {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -331,7 +331,7 @@ private fun SetPriceAlertSection() {
 }
 
 @Composable
-private fun CurrencyItem(currency: TrendingCurrency) {
+fun CurrencyItem(currency: TrendingCurrency) {
     Row(verticalAlignment = Alignment.CenterVertically) {
         Image(
             painter = painterResource(id = currency.imageRes),
@@ -356,7 +356,7 @@ private fun CurrencyItem(currency: TrendingCurrency) {
 }
 
 @Composable
-private fun ValuesItem(
+fun ValuesItem(
     currency: TrendingCurrency
 ) {
     val changeColor by remember {

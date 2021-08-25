@@ -12,10 +12,13 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.navArgument
 import androidx.navigation.compose.rememberNavController
 import com.example.cryptouijc.ui.BottomNavigationBar
+import com.example.cryptouijc.ui.CryptoDetailsScreen
 import com.example.cryptouijc.ui.HomeScreen
 import com.example.cryptouijc.ui.theme.CryptoUIJCTheme
 import com.example.cryptouijc.ui.theme.Purple500
@@ -78,9 +81,28 @@ class MainActivity : ComponentActivity() {
             composable(
                 route = Screen.HomeScreen.route
             ) {
-                HomeScreen() {
-                    navController.navigate(Screen.HomeScreen.route)
+                HomeScreen() { currencyCode ->
+                    navController.navigate(Screen.CryptoDetailsScreen.route + "/$currencyCode")
                 }
+            }
+            composable(
+                route = Screen.CryptoDetailsScreen.route + "/{currencyCode}",
+                arguments = listOf(
+                    navArgument(name = "currencyCode") {
+                        type = NavType.StringType
+                    }
+                )
+            ) { entry ->
+                val currencyCode = entry.arguments?.getString("currencyCode")!!
+                CryptoDetailsScreen(
+                    currencyCode = currencyCode,
+                    onBackArrowPressed = {
+                        navController.popBackStack()
+                    },
+                    onButtonClick = {
+                        navController.navigate(Screen.TransactionScreen.route + "/$currencyCode")
+                    }
+                )
             }
         }
     }
