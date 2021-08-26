@@ -42,7 +42,10 @@ fun CryptoDetailsScreen(
                 .padding(bottom = 50.dp)
                 .verticalScroll(rememberScrollState())
         ) {
-            TopRow(onBackArrowPressed = onBackArrowPressed)
+            TopRow(
+                onBackArrowPressed = onBackArrowPressed,
+                isStarred = true
+            )
             LineChartSection(currency = currency)
             BuyCryptoSection(
                 currency = currency,
@@ -200,9 +203,9 @@ fun LineChartSection(currency: TrendingCurrency) {
 }
 
 @Composable
-private fun TopRow(
+fun TopRow(
     onBackArrowPressed: () -> Unit,
-    isStarred: Boolean = true
+    isStarred: Boolean
 ) {
     Row(
         horizontalArrangement = Arrangement.SpaceBetween,

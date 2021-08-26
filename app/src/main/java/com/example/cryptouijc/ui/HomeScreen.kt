@@ -136,7 +136,7 @@ fun HomeScreenContent(
 }
 
 @Composable
-private fun TransactionHistorySection() {
+fun TransactionHistorySection() {
     Surface(
         modifier = Modifier
             .fillMaxWidth()

@@ -20,6 +20,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.cryptouijc.ui.BottomNavigationBar
 import com.example.cryptouijc.ui.CryptoDetailsScreen
 import com.example.cryptouijc.ui.HomeScreen
+import com.example.cryptouijc.ui.TransactionScreen
 import com.example.cryptouijc.ui.theme.CryptoUIJCTheme
 import com.example.cryptouijc.ui.theme.Purple500
 import com.example.cryptouijc.utils.NavigationItems
@@ -101,6 +102,25 @@ class MainActivity : ComponentActivity() {
                     },
                     onButtonClick = {
                         navController.navigate(Screen.TransactionScreen.route + "/$currencyCode")
+                    }
+                )
+            }
+            composable(
+                route = Screen.TransactionScreen.route + "/{currencyCode}",
+                arguments = listOf(
+                    navArgument(name = "currencyCode") {
+                        type = NavType.StringType
+                    }
+                )
+            ) { entry ->
+                val currencyCode = entry.arguments?.getString("currencyCode")!!
+                TransactionScreen(
+                    onBackArrowPressed = {
+                        navController.popBackStack()
+                    },
+                    currencyCode = currencyCode,
+                    onTradeButtonClick = {
+
                     }
                 )
             }
