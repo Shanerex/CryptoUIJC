@@ -17,10 +17,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navArgument
 import androidx.navigation.compose.rememberNavController
-import com.example.cryptouijc.ui.BottomNavigationBar
-import com.example.cryptouijc.ui.CryptoDetailsScreen
-import com.example.cryptouijc.ui.HomeScreen
-import com.example.cryptouijc.ui.TransactionScreen
+import com.example.cryptouijc.ui.*
 import com.example.cryptouijc.ui.theme.CryptoUIJCTheme
 import com.example.cryptouijc.ui.theme.Purple500
 import com.example.cryptouijc.utils.NavigationItems
@@ -123,6 +120,11 @@ class MainActivity : ComponentActivity() {
 
                     }
                 )
+            }
+            composable(route = Screen.SettingsScreen.route) {
+                SettingsScreen {
+                    navController.popBackStack()
+                }
             }
         }
     }

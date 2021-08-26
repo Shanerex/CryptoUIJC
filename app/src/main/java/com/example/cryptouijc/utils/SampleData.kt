@@ -1,12 +1,15 @@
 package com.example.cryptouijc.utils
 
 import com.example.cryptouijc.R
-import com.example.cryptouijc.models.Portfolio
-import com.example.cryptouijc.models.Transaction
-import com.example.cryptouijc.models.TrendingCurrency
-import com.example.cryptouijc.models.Wallet
+import com.example.cryptouijc.models.*
 
 object SampleData {
+
+    val user = User(
+        userName = "ShaneRex",
+        firstName = "Shane Rex",
+        lastName = "Sasikumar"
+    )
 
     val portfolio = Portfolio(
         balance = 12744.33f,
