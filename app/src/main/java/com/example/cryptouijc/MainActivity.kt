@@ -140,7 +140,7 @@ class MainActivity : ComponentActivity() {
                         navController.popBackStack()
                     },
                     onItemClick = { currencyCode ->
-                        navController.navigate(Screen.PricesScreen.route + "/$currencyCode")
+                        navController.navigate(Screen.CryptoDetailsScreen.route + "/$currencyCode")
                     }
                 )
             }
