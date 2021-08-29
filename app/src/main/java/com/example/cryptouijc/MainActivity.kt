@@ -6,6 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -25,6 +26,7 @@ import com.example.cryptouijc.utils.Screen
 
 
 class MainActivity : ComponentActivity() {
+    @ExperimentalComposeUiApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -68,6 +70,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    @ExperimentalComposeUiApi
     @Composable
     fun Navigation(
         navController: NavHostController
@@ -130,6 +133,16 @@ class MainActivity : ComponentActivity() {
                 PortfolioScreen {
                     navController.popBackStack()
                 }
+            }
+            composable(route = Screen.PricesScreen.route) {
+                PricesScreen(
+                    onBackButtonPressed = {
+                        navController.popBackStack()
+                    },
+                    onItemClick = { currencyCode ->
+                        navController.navigate(Screen.PricesScreen.route + "/$currencyCode")
+                    }
+                )
             }
         }
     }

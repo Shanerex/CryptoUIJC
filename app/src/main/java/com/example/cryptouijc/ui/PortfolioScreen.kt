@@ -62,7 +62,9 @@ private fun CurrencySection() {
     Surface(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(top = 10.dp, end = 8.dp, start = 8.dp)
+            .padding(top = 10.dp, end = 8.dp, start = 8.dp),
+        elevation = 10.dp,
+        shape = RoundedCornerShape(10.dp)
     ) {
         Column(
             modifier = Modifier.padding(start = 12.dp, top = 12.dp, end = 12.dp)
@@ -164,7 +166,7 @@ private fun CoinItem(currency: TrendingCurrency) {
 
 @ExperimentalComposeUiApi
 @Composable
-private fun SearchSection() {
+fun SearchSection() {
 
     var textState by remember {
         mutableStateOf(TextFieldValue(""))

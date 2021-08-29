@@ -5,6 +5,14 @@ import com.example.cryptouijc.models.*
 
 object SampleData {
 
+    val topChipsName = listOf<String>(
+        "All    4 ",
+        "Following    2 ",
+        "Crypto    4 ",
+        "Utility Tokens    1 ",
+        "Stable Coins    2 "
+    )
+
     val user = User(
         userName = "ShaneRex",
         firstName = "Shane Rex",
@@ -406,6 +414,20 @@ object SampleData {
                 )
             )
         )
+    )
+
+    val followingTokens = listOf<TrendingCurrency>(
+        trendingCurrencies[0],
+        trendingCurrencies[1]
+    )
+
+    val utilityTokens = listOf<TrendingCurrency>(
+        trendingCurrencies[3]
+    )
+
+    val stableCoins = listOf<TrendingCurrency>(
+        trendingCurrencies[1],
+        trendingCurrencies[0]
     )
 
     val transactionHistory = listOf(
