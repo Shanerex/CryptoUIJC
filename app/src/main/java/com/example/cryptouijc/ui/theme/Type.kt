@@ -8,8 +8,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.example.cryptouijc.R
 
-private val RobotoBlack = FontFamily(Font(R.font.roboto_black))
-private val RobotoBold = FontFamily(Font(R.font.roboto_bold))
+val RobotoBlack = FontFamily(Font(R.font.roboto_black))
+val RobotoBold = FontFamily(Font(R.font.roboto_bold))
 val RobotoRegular = FontFamily(Font(R.font.roboto_regular))
 
 val Typography = Typography(

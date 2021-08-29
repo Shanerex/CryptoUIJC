@@ -126,6 +126,11 @@ class MainActivity : ComponentActivity() {
                     navController.popBackStack()
                 }
             }
+            composable(route = Screen.PortfolioScreen.route) {
+                PortfolioScreen {
+                    navController.popBackStack()
+                }
+            }
         }
     }
 }
