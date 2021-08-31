@@ -79,10 +79,10 @@ private fun chipSection(): Int {
             Box(
                 modifier = Modifier
                     .padding(start = 8.dp)
+                    .clip(RoundedCornerShape(50.dp))
                     .clickable {
                         selectedIndex = index
                     }
-                    .clip(RoundedCornerShape(50.dp))
                     .background(
                         if (selectedIndex == index) BannerColor
                         else Color.White

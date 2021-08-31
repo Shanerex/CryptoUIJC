@@ -38,64 +38,75 @@ fun CoinRateItem(
                 onItemClick(currency.currencyCode)
             }
     ) {
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            Image(
-                painter = painterResource(id = currency.imageRes),
-                contentDescription = currency.currencyName,
-                modifier = Modifier.padding(end = 18.dp)
+        CurrencyInfoSection(currency = currency)
+        
+        CoinAmountSection(currency = currency)
+    }
+}
+
+@Composable
+fun CurrencyInfoSection(currency: TrendingCurrency) {
+    Row(verticalAlignment = Alignment.CenterVertically) {
+        Image(
+            painter = painterResource(id = currency.imageRes),
+            contentDescription = currency.currencyName,
+            modifier = Modifier.padding(end = 18.dp)
+        )
+        Column {
+            Text(
+                text = currency.currencyName,
+                style = Typography.h4,
+                modifier = Modifier.padding(bottom = 4.dp)
             )
-            Column {
-                Text(
-                    text = currency.currencyName,
-                    style = Typography.h4,
-                    modifier = Modifier.padding(bottom = 4.dp)
-                )
-                Text(
-                    text = currency.currencyCode,
-                    style = Typography.h5,
-                    color = Gray
-                )
+            Text(
+                text = currency.currencyCode,
+                style = Typography.h5,
+                color = Gray
+            )
+        }
+    }
+}
+
+@Composable
+fun CoinAmountSection(currency: TrendingCurrency) {
+    val operator by remember {
+        mutableStateOf(
+            if(currency.changeType == "I") {
+                "+"
+            } else {
+                "-"
             }
-        }
-        val operator by remember {
-            mutableStateOf(
-                if(currency.changeType == "I") {
-                    "+"
-                } else {
-                    "-"
-                }
-            )
-        }
-        val changesColor by remember {
-            mutableStateOf(
-                if(currency.changeType == "I") {
-                    Color.Green
-                } else {
-                    Color.Red
-                }
-            )
-        }
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            Column(horizontalAlignment = Alignment.End) {
-                Text(
-                    text = "£${currency.currentPrice}",
-                    style = TextStyle(
-                        fontFamily = RobotoRegular,
-                        fontSize = 16.sp,
-                        lineHeight = 18.sp
-                    ),
-                    color = Color.Black
-                )
-                Text(
-                    text = "$operator${currency.changes}",
-                    style = TextStyle(
-                        fontFamily = RobotoRegular,
-                        fontSize = 14.sp,
-                        lineHeight = 18.sp
-                    ),
-                    color = changesColor
-                )
+        )
+    }
+    val changesColor by remember {
+        mutableStateOf(
+            if(currency.changeType == "I") {
+                Color.Green
+            } else {
+                Color.Red
             }
+        )
+    }
+    Row(verticalAlignment = Alignment.CenterVertically) {
+        Column(horizontalAlignment = Alignment.End) {
+            Text(
+                text = "£${currency.currentPrice}",
+                style = TextStyle(
+                    fontFamily = RobotoRegular,
+                    fontSize = 16.sp,
+                    lineHeight = 18.sp
+                ),
+                color = Color.Black
+            )
+            Text(
+                text = "$operator${currency.changes}",
+                style = TextStyle(
+                    fontFamily = RobotoRegular,
+                    fontSize = 14.sp,
+                    lineHeight = 18.sp
+                ),
+                color = changesColor
+            )
         }
     }
 }

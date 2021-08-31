@@ -1,9 +1,42 @@
 package com.example.cryptouijc.utils
 
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.DateRange
+import androidx.compose.material.icons.filled.Label
+import androidx.compose.material.icons.filled.RepeatOneOn
 import com.example.cryptouijc.R
 import com.example.cryptouijc.models.*
 
 object SampleData {
+
+    val repeatOptions = listOf<RepeatOptions>(
+        RepeatOptions(
+            iconImageVector = Icons.Default.RepeatOneOn,
+            optionName = "Repeats",
+            frequency = "Never"
+        ),
+        RepeatOptions(
+            iconImageVector = Icons.Default.DateRange,
+            optionName = "Starts",
+            frequency = "Today"
+        ),
+        RepeatOptions(
+            iconImageVector = Icons.Default.DateRange,
+            optionName = "Ends",
+            frequency = "Never"
+        ),
+        RepeatOptions(
+            iconImageVector = Icons.Default.Label,
+            optionName = "Label",
+            frequency = "Edit label"
+        )
+    )
+
+    val tradeScreenSections = listOf<String>(
+        "Transact",
+        "Repeat",
+        "Limit"
+    )
 
     val topChipsName = listOf<String>(
         "All    4 ",
